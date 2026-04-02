@@ -1,0 +1,26 @@
+@startuml
+
+title Diagramme de classe Lampe
+
+class Lampe {
+  - nom : String
+  - allume : boolean
+  + Lampe(String)
+  + allumer()
+  + eteindre()
+  + toString() : String
+}
+
+class Telecommande {
+  - lampes : List<Lampe>
+  + Telecommande()
+  + ajouterLampe(Lampe)
+  + activerLampe(int)
+  + desactiverLampe(int)
+  + activerTout()
+  + toString() : String
+}
+
+Telecommande "1" --> "*" Lampe : contrôle
+
+@enduml
