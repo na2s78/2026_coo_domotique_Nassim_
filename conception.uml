@@ -13,14 +13,26 @@ class Lampe {
 
 class Telecommande {
   - lampes : List<Lampe>
+  - hifis : List<Hifi>
   + Telecommande()
   + ajouterLampe(Lampe)
+  + ajouterHifi(Hifi)
   + activerLampe(int)
+  + activerHifi(int)
   + desactiverLampe(int)
+  + desactiverHifi(int)
   + activerTout()
   + toString() : String
 }
 
+class Hifi {
+  - son : int
+  + allumer()
+  + éteindre()
+  + toString() : String
+}
+
 Telecommande "1" --> "*" Lampe : contrôle
+Telecommande "1" --> "*" Hifi : contrôle
 
 @enduml
