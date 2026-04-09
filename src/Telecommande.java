@@ -17,12 +17,20 @@ public class Telecommande {
         }
     }
     public void desactiverLampe(int x){
-        throw new Error ( " code non ecrit " );
+        if (x >= 0 && x < lampes.size()) {
+            this.lampes.get(x).eteindre();
+        }
     }
     public void activerTout(){
-        throw new Error ( " code non ecrit " );
+        for (Lampe l : lampes) {
+            l.allumer();
+        }
     }
     public String toString(){
-        throw new Error ( " code non ecrit " );
+        String res = "Contenu de la télécommande :\n";
+        for (int i = 0; i < lampes.size(); i++) {
+            res += i + " : " + lampes.get(i).toString() + "\n";
+        }
+        return res;
     }
 }

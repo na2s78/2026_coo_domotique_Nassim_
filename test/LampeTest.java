@@ -91,14 +91,9 @@ public class LampeTest {
 	 * test to String lampe allumee
 	 */
 	public void testToString_allumee() {
-		// preparation des donnees
 		Lampe l = new Lampe("lampe1");
 		l.allumer();
-
-		//methode testee
-		String r=""+l;
-
-		//verification
+		String r = "" + l;
 		assertEquals("lampe1: On",r,"affichage devrait etr off");
 
 	}
