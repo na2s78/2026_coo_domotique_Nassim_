@@ -56,4 +56,30 @@ public class TelecommandeTest {
 
         t.activerA(1);
     }
+
+
+    public void testActiverCheminee(){
+        Telecommande t = new Telecommande();
+        Cheminee c = new Cheminee();
+        AdapterCheminee ac = new AdapterCheminee(c);
+
+        t.ajouterA(ac);
+        t.activerA(0);
+
+        assertEquals(100, c.getLumiere(), "La cheminee est censée etre allumée");
+    }
+
+    public void testDesactiverCheminee(){
+        Telecommande t = new Telecommande();
+        Cheminee c = new Cheminee();
+        AdapterCheminee ac = new AdapterCheminee(c);
+
+        t.ajouterA(ac);
+        t.activerA(0);
+        t.desactiverA(0);
+
+        assertEquals(0, c.getLumiere(), "La cheminee est censée etre eteinte");
+    }
+
+
 }
