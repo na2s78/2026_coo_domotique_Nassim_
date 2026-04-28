@@ -16,4 +16,10 @@ class AdapterCheminee implements Appareils{
         c.changerIntensite(0);
         System.out.println("La cheminée est éteinte.");
     }
+
+    @Override
+    public String toString() {
+        // Vous pouvez personnaliser ce texte comme vous voulez
+        return "Cheminée (Intensité : " + c.getLumiere() + ")";
+    }
 }
