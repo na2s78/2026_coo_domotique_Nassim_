@@ -1,38 +1,56 @@
 @startuml
 
-title Diagramme de classe Lampe
+title Nouveau Diagramme de classe
+
+interface Appareils {
+  + allumer()
+  + eteindre()
+}
 
 class Lampe {
   - nom : String
   - allume : boolean
-  + Lampe(String)
   + allumer()
   + eteindre()
-  + toString() : String
-}
-
-class Telecommande {
-  - lampes : List<Lampe>
-  - hifis : List<Hifi>
-  + Telecommande()
-  + ajouterLampe(Lampe)
-  + ajouterHifi(Hifi)
-  + activerLampe(int)
-  + activerHifi(int)
-  + desactiverLampe(int)
-  + desactiverHifi(int)
-  + activerTout()
-  + toString() : String
 }
 
 class Hifi {
   - son : int
   + allumer()
-  + éteindre()
+  + eteindre()
+}
+
+class Television {
+  - chaine : int
+  + allumer()
+  + eteindre()
+}
+
+class Telecommande {
+  - appareils : List<Appareils>
+  + Telecommande()
+  + ajouterA(Appareils)
+  + activerA(int)
+  + desactiverA(int)
+  + activerTout()
   + toString() : String
 }
 
-Telecommande "1" --> "*" Lampe : contrôle
-Telecommande "1" --> "*" Hifi : contrôle
+
+class AdapterCheminee{
+  + c : Cheminee
+}
+
+class Cheminee {
+}
+
+Telecommande "1" --> "*" Appareils : contrôle
+
+Appareils <|.. Lampe
+Appareils <|.. Hifi
+Appareils <|.. Television
+Appareils <|.. AdapterCheminee
+
+AdapterCheminee --> Cheminee
 
 @enduml
