@@ -42,6 +42,8 @@ class AdapterCheminee{
 }
 
 class Cheminee {
+  + changerIntensite(int)
+  + getLumiere() : int
 }
 
 Telecommande "1" --> "*" Appareils : contrôle
