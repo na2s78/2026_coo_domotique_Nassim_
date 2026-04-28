@@ -67,6 +67,7 @@ public class TelecommandeTest {
         t.activerA(0);
 
         assertEquals(100, c.getLumiere(), "La cheminee est censée etre allumée");
+        
     }
 
     public void testDesactiverCheminee(){
